@@ -248,3 +248,10 @@ form div #checkout:hover {
     display: none;
     
 }
+.footer {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:violet;
+}
