@@ -250,7 +250,7 @@ form div #checkout:hover {
 }
 footer{
         
-    background-color: #FF0000;
+    background-color: thistle;
    /* text-align: center; 
    
     margin-left: 40%;
@@ -267,9 +267,4 @@ footer{
 footer div{
     display: flex;
     margin-left: 40%;
-
-}
-
-footer div img{
-    padding-left: 20px;
 }
