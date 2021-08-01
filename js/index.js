@@ -1,4 +1,4 @@
-// CUSTOMER ORDER CONSTRUCTOR
+// Creation of a constructor in the Orders made by customers
 let CustomerOrder = function(typeOfPizza, pizzaSize, crust,toppings, deliveryOption, pizzaNumberTotal, deliveryLocation ){
 
     this.typeOfPizza = typeOfPizza;
@@ -10,7 +10,7 @@ let CustomerOrder = function(typeOfPizza, pizzaSize, crust,toppings, deliveryOpt
     this.deliveryLocation = deliveryLocation;
 }
 
-// PRICING OBJECT
+// Creation of an object for the prizes of the various commodities
 CustomerOrder.prototype.kadimasPizza = { 
     name: "Kadima's Pizza",
 

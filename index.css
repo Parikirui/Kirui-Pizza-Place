@@ -248,10 +248,28 @@ form div #checkout:hover {
     display: none;
     
 }
-.footer {
-    height: 15vh;
+footer{
+        
+    background-color: #FF0000;
+   /* text-align: center; 
+   
+    margin-left: 40%;
+   
+   margin-bottom: 0%;
+   height: 50px;  */
+   font-family: 'Pacifico', cursive;
+   margin-top: 1%;
+   padding-top: 20px;
+}
+
+
+
+footer div{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color:violet;
+    margin-left: 40%;
+
+}
+
+footer div img{
+    padding-left: 20px;
 }
