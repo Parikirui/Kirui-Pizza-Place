@@ -16,23 +16,23 @@ CustomerOrder.prototype.kadimasPizza = {
 
     pizzaSizePrice: [
         {default: 0}, 
-        {small: 500}, 
-        {medium: 800}, 
-        {large: 1200}],
+        {small: 300}, 
+        {medium: 500}, 
+        {large: 700}],
 
     pizzaCrustPrice: [
         {default: 0}, 
-        {crispy: 200}, 
-        {stuffed: 220}, 
-        {glutten_free: 300}],
+        {crispy: 300}, 
+        {stuffed: 320}, 
+        {glutten_free: 400}],
 
     deliveryPrice: 100,
 
     toppingPrice: [
         {default: 0}, 
-        {potato_sausage_bacon: 300}, 
-        {black_olives_anchovies_capers: 500},
-        {mixed_sliced_mushrooms_and_garlic: 700}
+        {potato_sausage_bacon: 400}, 
+        {black_olives_anchovies_capers: 600},
+        {mixed_sliced_mushrooms_and_garlic: 800}
     ]
 }
 
