@@ -11,8 +11,8 @@ let CustomerOrder = function(typeOfPizza, pizzaSize, crust,toppings, deliveryOpt
 }
 
 // Creation of an object for the prizes of the various commodities
-CustomerOrder.prototype.kadimasPizza = { 
-    name: "Kadima's Pizza",
+CustomerOrder.prototype.kiruiPlace = { 
+    name: "kirui pizza place",
 
     pizzaSizePrice: [
         {default: 0}, 
@@ -52,29 +52,29 @@ $("button#customizeOrder").click(function(event){
        
     
     $(".formOutput").show()
-    // NEW INSTANCE OF CUSTOMER OBJECT
+    // A situation whereby a new customer comes in
     let customerOrder = new CustomerOrder(typeOfPizza, pizzaSize, crust, toppings, deliveryOption, pizzaNumberTotal, deliveryLocation );
 
-    // PRICE CALCULATIONS
-    // For small pizza
+    // Calculation of the possible orders for the small pizza
 
 
-    // CRISPY option - potato_sausage_bacon
+
+    // Case 1 : application of the control flow
     if (pizzaSize == "small" && crust == "crispy" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
 
         let orderSummary = `
             <h2>Order Summary</h2>
             <p>Type of Pizza: ${typeOfPizza}</p>
             <p>Delivery location: ${deliveryLocation}</p>
             <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Crispy - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy} </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
             <hr>
             <p>Total: - KSh. ${totalPrice}
         `;
@@ -82,615 +82,610 @@ $("button#customizeOrder").click(function(event){
         alert("your pizza will be delivered at " + deliveryLocation)
     }
 
-    // crispy black_olives_anchovies_capers
+    // Case 2 : application of the control flow
     if (pizzaSize == "small" && crust == "crispy" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
         
-        let orderSummary = `
+            let orderSummary = `
             <h2>Order Summary</h2>
             <p>Type of Pizza: ${typeOfPizza}</p>
             <p>Delivery location: ${deliveryLocation}</p>
             <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Crispy - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
             <hr>
             <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // crispy mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "small" && crust == "crispy" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-    
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Crispy - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy} </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-
-    // STUFFED option - potato_sausage_bacon
-    if (pizzaSize == "small" && crust == "stuffed" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Stuffed - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed} </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // STUFFED option - black_olives_anchovies_capers
-     if (pizzaSize == "small" && crust == "stuffed" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Stuffed - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // STUFFED option - mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "small" && crust == "stuffed" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Stuffed - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed} </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // GLUTTEN_FREE option - potato_sausage_bacon
-    if (pizzaSize == "small" && crust == "glutten_free" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Glutten free - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Potato, sausage and bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon }</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // GLUTTEN_FREE option - black_olives_anchovies_capers
-    if (pizzaSize == "small" && crust == "glutten_free" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-       
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Glutten free - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // GLUTTEN_FREE option - mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "small" && crust == "glutten_free" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[1].small + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Small - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[1].small} </p>
-            <p>Crust: Glutten free - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-
-     // PRICE CALCULATIONS
-    // For medium pizza
-
-
-    // CRISPY option - potato_sausage_bacon
-    if (pizzaSize == "medium" && crust == "crispy" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Crispy - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy } </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${  customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // crispy black_olives_anchovies_capers
-    if (pizzaSize == "medium" && crust == "crispy" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Crispy - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy } </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // crispy mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "medium" && crust == "crispy" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Crispy - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy } </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-
-    // STUFFED option - potato_sausage_bacon
-    if (pizzaSize == "medium" && crust == "stuffed" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-            
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Stuffed - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed } </p>
-            <p>Toppings: Potato, sausage and bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // STUFFED option - black_olives_anchovies_capers
-     if (pizzaSize == "medium" && crust == "stuffed" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-       
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Stuffed - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed } </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // STUFFED option - mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "medium" && crust == "stuffed" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-    
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Stuffed - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed } </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${ customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // GLUTTEN_FREE option - potato_sausage_bacon
-    if (pizzaSize == "medium" && crust == "glutten_free" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Glutten free - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // GLUTTEN_FREE option - black_olives_anchovies_capers
-    if (pizzaSize == "medium" && crust == "glutten_free" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Glutten free - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // GLUTTEN_FREE option - mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "medium" && crust == "glutten_free" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[2].medium + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Medium - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[2].medium} </p>
-            <p>Crust: Glutten free - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-
-     // PRICE CALCULATIONS
-    // For LARGE pizza
-
-
-    // CRISPY option - potato_sausage_bacon
-    if (pizzaSize == "large" && crust == "crispy" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Crispy - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy} </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // crispy black_olives_anchovies_capers
-    if (pizzaSize == "large" && crust == "crispy" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-    
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Crispy - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // crispy mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "large" && crust == "crispy" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Crispy - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[1].crispy} </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-
-    // STUFFED option - potato_sausage_bacon
-    if (pizzaSize == "large" && crust == "stuffed" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Stuffed - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed} </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // STUFFED option - black_olives_anchovies_capers
-     if (pizzaSize == "large" && crust == "stuffed" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-    
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Stuffed - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // STUFFED option - mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "large" && crust == "stuffed" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-
-    let orderSummary = `
-        <h2>Order Summary</h2>
-        <p>Type of Pizza: ${typeOfPizza}</p>
-        <p>Delivery location: ${deliveryLocation}</p>
-        <p>Number of orders: ${pizzaNumberTotal}</p>
-        <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-        <p>Crust: Stuffed - KSh. ${customerOrder.kadimasPizza.pizzaCrustPrice[2].stuffed} </p>
-        <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-        <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-        <hr>
-        <p>Total: - KSh. ${totalPrice}
         `;
-    $(".formOutput").html(orderSummary);
-    alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-    // GLUTTEN_FREE option - potato_sausage_bacon
-    if (pizzaSize == "large" && crust == "glutten_free" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Glutten free - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kadimasPizza.toppingPrice[1].potato_sausage_bacon}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
         $(".formOutput").html(orderSummary);
         alert("your pizza will be delivered at " + deliveryLocation)
     }
-
-    // GLUTTEN_FREE option - black_olives_anchovies_capers
-    if (pizzaSize == "large" && crust == "glutten_free" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
-        
-        let orderSummary = `
-            <h2>Order Summary</h2>
-            <p>Type of Pizza: ${typeOfPizza}</p>
-            <p>Delivery location: ${deliveryLocation}</p>
-            <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Glutten free - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Black olives, anchovies and capers - KSh. ${customerOrder.kadimasPizza.toppingPrice[2].black_olives_anchovies_capers}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
-            <hr>
-            <p>Total: - KSh. ${totalPrice}
-            `;
-        $(".formOutput").html(orderSummary);
-        alert("your pizza will be delivered at " + deliveryLocation)
-    }
-
-     // GLUTTEN_FREE option - mixed_sliced_mushrooms_and_garlic
-     if (pizzaSize == "large" && crust == "glutten_free" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
-        let totalPrice = (customerOrder.kadimasPizza.pizzaSizePrice[3].large + 
-            customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free + 
-            customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic + 
-            customerOrder.kadimasPizza.deliveryPrice) * pizzaNumberTotal;
+     // Case 3 : application of the control flow
+     if (pizzaSize == "small" && crust == "crispy" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
     
-        let orderSummary = `
+            let orderSummary = `
             <h2>Order Summary</h2>
             <p>Type of Pizza: ${typeOfPizza}</p>
             <p>Delivery location: ${deliveryLocation}</p>
             <p>Number of orders: ${pizzaNumberTotal}</p>
-            <p>Pizza size: Large - KSh. ${customerOrder.kadimasPizza.pizzaSizePrice[3].large} </p>
-            <p>Crust: Glutten free - KSh. ${ customerOrder.kadimasPizza.pizzaCrustPrice[3].glutten_free} </p>
-            <p>Toppings: Mixed sliced mushrooms and garlic - KSh. ${ customerOrder.kadimasPizza.toppingPrice[3].mixed_sliced_mushrooms_and_garlic}</p>
-            <p>Delivery: - KSh. ${customerOrder.kadimasPizza.deliveryPrice}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
             <hr>
             <p>Total: - KSh. ${totalPrice}
-            `;
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+
+    // Case 4 : application of the control flow
+    if (pizzaSize == "small" && crust == "stuffed" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 5 : application of the control flow
+     if (pizzaSize == "small" && crust == "stuffed" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 6 : application of the control flow
+     if (pizzaSize == "small" && crust == "stuffed" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    // Case 8 : application of the control flow
+    if (pizzaSize == "small" && crust == "glutten_free" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    // Case 9 : application of the control flow
+    if (pizzaSize == "small" && crust == "glutten_free" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 9 : application of the control flow
+     if (pizzaSize == "small" && crust == "glutten_free" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+
+     // Calculation of the possible orders for the medium pizza
+    
+
+
+    // Case 1 : application of the control flow
+    if (pizzaSize == "medium" && crust == "crispy" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    // Case 1 : application of the control flow
+    if (pizzaSize == "medium" && crust == "crispy" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 2 : application of the control flow
+     if (pizzaSize == "medium" && crust == "crispy" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    // Case 3 : application of the control flow
+    if (pizzaSize == "medium" && crust == "stuffed" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 4: application of the control flow
+     if (pizzaSize == "medium" && crust == "stuffed" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 5 : application of the control flow
+     if (pizzaSize == "medium" && crust == "stuffed" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    // Case 6 : application of the control flow
+    if (pizzaSize == "medium" && crust == "glutten_free" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    //Case 7 : application of the control flow
+    if (pizzaSize == "medium" && crust == "glutten_free" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     // Case 9 : application of the control flow
+     if (pizzaSize == "medium" && crust == "glutten_free" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+
+     // Calculation of the possible orders for the  pizza
+    
+
+
+    //  // Case 1 : application of the control flow
+    if (pizzaSize == "large" && crust == "crispy" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    //  // Case 2 : application of the control flow
+    if (pizzaSize == "large" && crust == "crispy" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     //  // Case 3 : application of the control flow
+     if (pizzaSize == "large" && crust == "crispy" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+
+    //  // Case 4 : application of the control flow
+    if (pizzaSize == "large" && crust == "stuffed" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     //  // Case 5 : application of the control flow
+     if (pizzaSize == "large" && crust == "stuffed" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+     //  // Case 6 : application of the control flow
+     if (pizzaSize == "large" && crust == "stuffed" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    //  // Case 7 : application of the control flow
+    if (pizzaSize == "large" && crust == "glutten_free" && toppings == "potato_sausage_bacon" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+    //  // Case 8 : application of the control flow
+    if (pizzaSize == "large" && crust == "glutten_free" && toppings == "black_olives_anchovies_capers" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
+        $(".formOutput").html(orderSummary);
+        alert("your pizza will be delivered at " + deliveryLocation)
+    }
+
+     //  // Case 9 : application of the control flow
+     if (pizzaSize == "large" && crust == "glutten_free" && toppings == "mixed_sliced_mushrooms_and_garlic" && deliveryOption == "on"){
+        let totalPrice = (customerOrder.kiruiPlace.pizzaSizePrice[1].small + 
+            customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy + 
+            customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon + 
+            customerOrder.kiruiPlace.deliveryPrice) * pizzaNumberTotal;
+        
+            let orderSummary = `
+            <h2>Order Summary</h2>
+            <p>Type of Pizza: ${typeOfPizza}</p>
+            <p>Delivery location: ${deliveryLocation}</p>
+            <p>Number of orders: ${pizzaNumberTotal}</p>
+            <p>Pizza size: Small - KSh. ${customerOrder.kiruiPlace.pizzaSizePrice[1].small} </p>
+            <p>Crust: Crispy - KSh. ${customerOrder.kiruiPlace.pizzaCrustPrice[1].crispy} </p>
+            <p>Toppings: Potato, Sausage and Bacon - KSh. ${customerOrder.kiruiPlace.toppingPrice[1].potato_sausage_bacon}</p>
+            <p>Delivery: - KSh. ${customerOrder.kiruiPlace.deliveryPrice}</p> // Case 9 : application of the control flow
+            <hr>
+            <p>Total: - KSh. ${totalPrice}
+        `;
         $(".formOutput").html(orderSummary);
         alert("your pizza will be delivered at " + deliveryLocation)
     }
