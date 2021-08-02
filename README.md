@@ -1,4 +1,4 @@
-## Delani-Studio
+## Bishop of Hope Pizza Inn
 This system is called Bishop of Hope Pizza Inn.
 
 ## Contributor
